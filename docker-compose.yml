@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgresql-pex1
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: senha123
+      POSTGRES_DB: roseliadv
+    ports:
+      - "5453:5432"
+
