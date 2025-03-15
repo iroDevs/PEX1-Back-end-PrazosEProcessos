@@ -1,6 +1,6 @@
 import { FastifyInstance } from "fastify";
 
-export default async function UserRoute(router: FastifyInstance) {
+export default async function ClienteRoute(router: FastifyInstance) {
 
     router.get('/', async (request, reply) => {
         return reply.status(200).send({message: 'Rotas de usuarios'})
