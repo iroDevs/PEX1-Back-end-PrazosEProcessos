@@ -4,16 +4,21 @@ import fastifyCors from '@fastify/cors';
 import ClienteRoute from './routes/ClienteRoute';
 import PrazosRoute from './routes/PrazosRoute';
 import { HandlerError } from './erros/HandlerErros';
+import Teste from './utils/Emails/html/teste';
+import { sendEmail } from './utils/Emails/SendEmail';
 
 const app = Fastify({ logger: true });
-//handler de erro
-/*app.setErrorHandler((error, request, reply) => {
-    console.log(error);
-    reply.status(500).send({ message: 'Erro interno no servidor' });
-});*/
+
 
 app.register(fastifyCors, { origin: '*' })
 
+const testeHtml = Teste()
+const objEmail = {
+    sendTo:"sofya.batista.123@gmail.com",
+    subject:"Teste",
+    html: testeHtml
+}
+sendEmail(objEmail)
 //error handler
 app.setErrorHandler(HandlerError);
 
