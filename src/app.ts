@@ -13,12 +13,14 @@ const app = Fastify({ logger: true });
 app.register(fastifyCors, { origin: '*' })
 
 const testeHtml = Teste()
-const objEmail = {
-    sendTo:"sofya.batista.123@gmail.com",
+/*const objEmail = {
+    sendTo:"pedrohenriquelouresoliveira@gmail.com",
     subject:"Teste",
     html: testeHtml
 }
-sendEmail(objEmail)
+sendEmail(objEmail)*/
+
+
 //error handler
 app.setErrorHandler(HandlerError);
 
